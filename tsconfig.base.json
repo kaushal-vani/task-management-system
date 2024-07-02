@@ -15,15 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@task-management-system/task-management-system/task-tree/shared": [
+      "@task-tree-shared": [
         "libs/task-management-system/task-tree/shared/src/index.ts"
       ],
-      "@task-management-system/task-management-system/task-tree/smart": [
+      "@task-tree-smart": [
         "libs/task-management-system/task-tree/smart/src/index.ts"
       ],
-      "@task-management-system/task-management-system/task-tree/ui": [
-        "libs/task-management-system/task-tree/ui/src/index.ts"
-      ]
+      "@task-tree-ui": ["libs/task-management-system/task-tree/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
