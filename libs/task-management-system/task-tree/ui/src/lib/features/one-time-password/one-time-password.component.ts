@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScreenAction, SCREEN_VIEW, BUTTON_NAME } from '@task-tree-shared';
 
 @Component({
   selector: 'lib-one-time-password',
@@ -8,4 +9,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './one-time-password.component.html',
   styleUrl: './one-time-password.component.scss',
 })
-export class OneTimePasswordComponent {}
+export class OneTimePasswordComponent {
+  @Output() navigate = new EventEmitter<ScreenAction>();
+
+  changeView() {
+    this.navigate.emit({
+      currentView: SCREEN_VIEW.ONE_TIME_PASSWORD,
+      buttonName: BUTTON_NAME.OTP_SUBMIT,
+      nextView: SCREEN_VIEW.VERIFICATION_COMPLETED,
+    });
+  }
+}
