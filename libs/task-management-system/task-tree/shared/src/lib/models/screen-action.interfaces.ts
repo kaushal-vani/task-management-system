@@ -5,6 +5,6 @@ export interface ScreenAction {
   nextView?: SCREEN_VIEW;
   previousView?: SCREEN_VIEW;
   buttonName?: BUTTON_NAME;
-  email: boolean;
-  phoneNumber: boolean;
+  email?: boolean;
+  phoneNumber?: boolean;
 }
