@@ -24,4 +24,6 @@ import { OneTimePasswordComponent } from '../../features/one-time-password/one-t
   templateUrl: './authentication-page.component.html',
   styleUrl: './authentication-page.component.scss',
 })
-export class AuthenticationPageComponent {}
+export class AuthenticationPageComponent {
+  currentView = '';
+}
