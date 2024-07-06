@@ -31,7 +31,7 @@ import { SelectDeviceComponent } from "../../features/select-device/select-devic
     ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.SELECT_DEVICE;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {
