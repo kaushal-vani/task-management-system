@@ -29,7 +29,7 @@ import { OneTimePasswordComponent } from "../../features/one-time-password/one-t
     ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.EDIT_EMAIL;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {

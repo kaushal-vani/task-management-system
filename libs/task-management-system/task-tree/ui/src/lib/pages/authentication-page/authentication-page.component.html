@@ -2,11 +2,13 @@
   <div class="content" [ngSwitch]="currentView">
     <lib-add-email
       *ngSwitchCase="'add-email'"
-      (navigateAction)="navigateToNextView($event)"
+      (navigate)="navigateToNextView($event)"
+      (back)="backToPreviousView($event)"
     ></lib-add-email>
     <lib-add-phone-number
       *ngSwitchCase="'add-phone-number'"
-      (navigateAction)="navigateToNextView($event)"
+      (navigate)="navigateToNextView($event)"
+      (back)="backToPreviousView($event)"
     ></lib-add-phone-number>
     <lib-edit-email
       *ngSwitchCase="'edit-email'"
