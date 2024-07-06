@@ -1,2 +1,51 @@
-<p>edit-email works!</p>
-<button (click)="changeView()"> edit email</button>
+    <p-card styleClass="ui-card-shadow">
+        <ng-template pTemplate="header">
+          <div class="text-center">
+            <h2>Edit Email Address</h2>
+          </div>
+        </ng-template>
+        <form [formGroup]="emailForm" (ngSubmit)="saveEmailAddress()">
+          <div class="edit-email__field">
+            <label class="edit-email__label" for="email">Email Address</label>
+            <input
+              id="email"
+              type="email"
+              pInputText
+              formControlName="emailAddress"
+              class="edit-email__input"
+              aria-describedby="emailHelp"
+            />
+            <div
+              id="emailHelp"
+              class="edit-email__error"
+              *ngIf="email?.invalid && email?.touched"
+            >
+              <div *ngIf="email?.errors?.['required']">Email address is required.</div>
+              <div *ngIf="email?.errors?.['email']">
+                Please enter a valid email address.
+              </div>
+            </div>
+          </div>
+      
+          <div class="edit-email__buttons">
+            <button
+              pButton
+              type="submit"
+              label="Save"
+              [disabled]="emailForm.invalid"
+              class="edit-email__button"
+            ></button>
+            <button
+              pButton
+              type="button"
+              label="Cancel"
+              (click)="cancelEdit()"
+              class="edit-email__button"
+            ></button>
+          </div>
+      
+          <div *ngIf="successMessage" class="edit-email__success">
+            {{ successMessage }}
+          </div>
+        </form>
+      </p-card>
