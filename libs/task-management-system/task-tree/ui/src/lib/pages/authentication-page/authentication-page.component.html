@@ -18,9 +18,9 @@
     ></lib-edit-phone-number>
     <lib-login
       *ngSwitchCase="'login'"
+      (back)="backToPreviousView($event)"
       (navigate)="navigateToNextView($event)"
       (verify)="onVerify($event)"
-      (back)="backToPreviousView($event)"
     ></lib-login>
     <lib-one-time-password
       *ngSwitchCase="'one-time-password'"
@@ -28,8 +28,8 @@
     ></lib-one-time-password>
     <lib-sign-up
       *ngSwitchCase="'sign-up'"
-      (navigateAction)="navigateToNextView($event)"
-      (submitAction)="onVerify($event)"
+      (navigate)="navigateToNextView($event)"
+      (verify)="onVerify($event)"
     ></lib-sign-up>
   </div>
 </div>

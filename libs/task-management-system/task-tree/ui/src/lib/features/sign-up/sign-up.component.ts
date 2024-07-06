@@ -29,8 +29,8 @@ import { SCREEN_VIEW, BUTTON_NAME, ScreenAction } from '@task-tree-shared';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  @Output() navigateAction = new EventEmitter<ScreenAction>();
-  @Output() submitAction = new EventEmitter<ScreenAction>();
+  @Output() navigate = new EventEmitter<ScreenAction>();
+  @Output() verify = new EventEmitter<ScreenAction>();
   signUpForm!: FormGroup;
   loading = false;
 
@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       if (this.signUpForm.valid) {
-        this.submitAction.emit({
+        this.verify.emit({
           currentView: SCREEN_VIEW.SIGN_UP,
           buttonName: BUTTON_NAME.SUBMIT,
         });
@@ -67,7 +67,7 @@ export class SignUpComponent implements OnInit {
   }
 
   navigateToLogin() {
-    this.navigateAction.emit({
+    this.navigate.emit({
       currentView: SCREEN_VIEW.SIGN_UP,
       buttonName: BUTTON_NAME.GO_TO_LOGIN,
       nextView: SCREEN_VIEW.LOGIN,
