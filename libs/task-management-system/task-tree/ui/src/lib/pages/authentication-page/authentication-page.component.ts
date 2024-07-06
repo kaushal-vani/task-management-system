@@ -6,28 +6,30 @@ import { AddPhoneNumberComponent } from '../../features/add-phone-number/add-pho
 import { AddEmailComponent } from '../../features/add-email/add-email.component';
 import { EditEmailComponent } from '../../features/edit-email/edit-email.component';
 import { EditPhoneNumberComponent } from '../../features/edit-phone-number/edit-phone-number.component';
-import { OneTimePasswordComponent } from '../../features/one-time-password/one-time-password.component';
 import { BUTTON_NAME, SCREEN_VIEW, ScreenAction } from '@task-tree-shared';
 import { Router } from '@angular/router';
+import { ForgotPasswordComponent } from "../../features/forgot-password/forgot-password.component";
+import { OneTimePasswordComponent } from "../../features/one-time-password/one-time-password.component";
 
 @Component({
-  selector: 'lib-authentication-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    LoginComponent,
-    SignUpComponent,
-    AddPhoneNumberComponent,
-    AddEmailComponent,
-    EditEmailComponent,
-    EditPhoneNumberComponent,
-    OneTimePasswordComponent,
-  ],
-  templateUrl: './authentication-page.component.html',
-  styleUrl: './authentication-page.component.scss',
+    selector: 'lib-authentication-page',
+    standalone: true,
+    templateUrl: './authentication-page.component.html',
+    styleUrl: './authentication-page.component.scss',
+    imports: [
+        CommonModule,
+        LoginComponent,
+        SignUpComponent,
+        AddPhoneNumberComponent,
+        AddEmailComponent,
+        EditEmailComponent,
+        EditPhoneNumberComponent,
+        ForgotPasswordComponent,
+        OneTimePasswordComponent
+    ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.ONE_TIME_PASSWORD;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {

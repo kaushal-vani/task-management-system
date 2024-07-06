@@ -16,6 +16,10 @@
       *ngSwitchCase="'edit-phone-number'"
       (navigateAction)="navigateToNextView($event)"
     ></lib-edit-phone-number>
+    <lib-forgot-password 
+    *ngSwitchCase="'forgot-password'"
+    (back)="backToPreviousView($event)"
+    ></lib-forgot-password>
     <lib-login
       *ngSwitchCase="'login'"
       (back)="backToPreviousView($event)"
@@ -24,7 +28,6 @@
     ></lib-login>
     <lib-one-time-password
       *ngSwitchCase="'one-time-password'"
-      (navigateAction)="navigateToNextView($event)"
     ></lib-one-time-password>
     <lib-sign-up
       *ngSwitchCase="'sign-up'"
