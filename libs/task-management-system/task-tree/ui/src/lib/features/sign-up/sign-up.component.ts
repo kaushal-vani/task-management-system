@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -28,13 +28,14 @@ import { SCREEN_VIEW, BUTTON_NAME, ScreenAction } from '@task-tree-shared';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   @Output() navigateAction = new EventEmitter<ScreenAction>();
   @Output() submitAction = new EventEmitter<ScreenAction>();
-  signUpForm: FormGroup;
+  signUpForm!: FormGroup;
   loading = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {}
+  ngOnInit() {
     this.signUpForm = this.fb.group(
       {
         username: ['', Validators.required],
@@ -54,25 +55,22 @@ export class SignUpComponent {
 
   onSubmit() {
     this.loading = true;
-
     setTimeout(() => {
       if (this.signUpForm.valid) {
         this.submitAction.emit({
           currentView: SCREEN_VIEW.SIGN_UP,
           buttonName: BUTTON_NAME.SUBMIT,
         });
-        console.log('Form Submitted', this.signUpForm.value);
       }
       this.loading = false;
     }, 2000);
   }
 
-  changeView() {
+  navigateToLogin() {
     this.navigateAction.emit({
       currentView: SCREEN_VIEW.SIGN_UP,
-      buttonName: BUTTON_NAME.SUBMIT,
+      buttonName: BUTTON_NAME.GO_TO_LOGIN,
       nextView: SCREEN_VIEW.LOGIN,
-      previousView: SCREEN_VIEW.SIGN_UP,
     });
   }
 }
