@@ -1,2 +1,57 @@
-<p>edit-phone-number works!</p>
-<button (click)="changeView()"></button>
+<p-card styleClass="ui-card-shadow">
+  <ng-template pTemplate="header">
+    <div class="text-center">
+      <h2>Edit Phone Number</h2>
+    </div>
+  </ng-template>
+  <form [formGroup]="phoneForm" (ngSubmit)="savePhoneNumber()">
+    <div class="edit-phone-number__field">
+      <label class="edit-phone-number__label" for="phone">Phone Number</label>
+      <input
+        id="phone"
+        type="text"
+        pInputText
+        formControlName="phoneNumber"
+        class="edit-phone-number__input"
+        aria-describedby="phoneHelp"
+      />
+      <div
+        id="phoneHelp"
+        class="edit-phone-number__error"
+        *ngIf="phone?.invalid && phone?.touched"
+      >
+        <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+        <div *ngIf="phone?.errors?.['minlength']">
+          Phone number must be at least 10 digits.
+        </div>
+        <div *ngIf="phone?.errors?.['maxlength']">
+          Phone number must not exceed 15 digits.
+        </div>
+        <div *ngIf="phone?.errors?.['pattern']">
+          Phone number must contain only digits.
+        </div>
+      </div>
+    </div>
+
+    <div class="edit-phone-number__buttons">
+      <button
+        pButton
+        type="submit"
+        label="Save"
+        [disabled]="phoneForm.invalid"
+        class="edit-phone-number__button"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="Cancel"
+        (click)="cancelEdit()"
+        class="edit-phone-number__button"
+      ></button>
+    </div>
+
+    <div *ngIf="successMessage" class="edit-phone-number__success">
+      {{ successMessage }}
+    </div>
+  </form>
+</p-card>
