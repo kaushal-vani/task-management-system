@@ -64,7 +64,7 @@ export class OneTimePasswordComponent implements OnInit {
   changeDevice() {
     this.navigate.emit({
       currentView: SCREEN_VIEW.ONE_TIME_PASSWORD,
-      nextView: SCREEN_VIEW.CHANGE_DEVICE,
+      nextView: SCREEN_VIEW.SELECT_DEVICE,
     });
   }
 

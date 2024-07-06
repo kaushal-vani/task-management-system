@@ -53,7 +53,7 @@ export class EditPhoneNumberComponent {
         this.navigate.emit({
           currentView: SCREEN_VIEW.EDIT_PHONE_NUMBER,
           buttonName: BUTTON_NAME.SAVE,
-          nextView: SCREEN_VIEW.VERIFICATION_COMPLETED,
+          nextView: SCREEN_VIEW.ONE_TIME_PASSWORD,
         });
       }, 2000);
     }
@@ -64,7 +64,7 @@ export class EditPhoneNumberComponent {
     this.back.emit({
       currentView: SCREEN_VIEW.EDIT_PHONE_NUMBER,
       buttonName: BUTTON_NAME.CANCEL,
-      previousView: SCREEN_VIEW.CHANGE_DEVICE,
+      previousView: SCREEN_VIEW.SELECT_DEVICE,
     });
   }
 }

@@ -50,7 +50,7 @@ export class EditEmailComponent {
         this.navigate.emit({
           currentView: SCREEN_VIEW.EDIT_EMAIL,
           buttonName: BUTTON_NAME.SAVE,
-          nextView: SCREEN_VIEW.VERIFICATION_COMPLETED,
+          nextView: SCREEN_VIEW.ONE_TIME_PASSWORD,
         });
       }, 2000);
     }
@@ -61,7 +61,7 @@ export class EditEmailComponent {
     this.back.emit({
       currentView: SCREEN_VIEW.EDIT_EMAIL,
       buttonName: BUTTON_NAME.CANCEL,
-      previousView: SCREEN_VIEW.CHANGE_DEVICE,
+      previousView: SCREEN_VIEW.SELECT_DEVICE,
     });
   }
 }
