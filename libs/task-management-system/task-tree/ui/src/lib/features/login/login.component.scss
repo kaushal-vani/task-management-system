@@ -1,0 +1,32 @@
+.login__field {
+  margin-bottom: 1em;
+}
+
+.login__label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.login__input,
+.login__button {
+  width: 100%;
+}
+
+.login__error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.2em;
+}
+
+.login_link {
+  margin-left: 5px;
+  color: cornflowerblue;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0.5em;
+}

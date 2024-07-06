@@ -1,2 +1,69 @@
-<p>login works!</p>
-<button (click)="changeView()"> after login => OTP</button>
+<p-card styleClass="ui-card-shadow">
+  <ng-template pTemplate="header">
+    <div class="text-center">
+      <h2>Log In</h2>
+    </div>
+  </ng-template>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login__field">
+      <label class="login__label" for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        pInputText
+        formControlName="username"
+        class="login__input"
+      />
+      <div
+        *ngIf="
+          loginForm.get('username')?.invalid &&
+          loginForm.get('username')?.touched
+        "
+        class="login__error"
+      >
+        Username is required.
+      </div>
+    </div>
+    <div class="login__field">
+      <label class="login__label" for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        pPassword
+        formControlName="password"
+        class="login__input"
+      />
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+        class="login__error"
+      >
+        Password is required.
+      </div>
+    </div>
+    <div class="login__field">
+      <button
+        pButton
+        type="submit"
+        label="Login"
+        [disabled]="loginForm.invalid"
+        class="login__button"
+      ></button>
+    </div>
+  </form>
+  <div class="p-field">
+    <span class="text-center">
+      Don't have an account
+      <a class="login_link" (click)="navigateToSignUp()">Sign Up</a></span
+    >
+  </div>
+  <div class="p-field">
+    <span class="text-center">
+      <a class="login_link" (click)="forgotPassword()"
+        >Forgot Password?</a
+      ></span
+    >
+  </div>
+</p-card>
