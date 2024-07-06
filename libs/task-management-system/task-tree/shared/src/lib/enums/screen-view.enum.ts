@@ -22,6 +22,7 @@ export const enum BUTTON_NAME {
   NEXT = 'next',
   OTP_SUBMIT = 'otp-submit',
   PREVIOUS = 'previous',
+  RESEND = 'resend',
   SIGN_UP = 'sign-up',
   SUBMIT = 'submit',
   VERIFY = 'verify',
