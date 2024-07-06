@@ -10,11 +10,13 @@
     ></lib-add-phone-number>
     <lib-edit-email
       *ngSwitchCase="'edit-email'"
-      (navigateAction)="navigateToNextView($event)"
+      (back)="backToPreviousView($event)"
+      (navigate)="navigateToNextView($event)"
     ></lib-edit-email>
     <lib-edit-phone-number
       *ngSwitchCase="'edit-phone-number'"
-      (navigateAction)="navigateToNextView($event)"
+      (back)="backToPreviousView($event)"
+      (navigate)="navigateToNextView($event)"
     ></lib-edit-phone-number>
     <lib-forgot-password 
     *ngSwitchCase="'forgot-password'"
