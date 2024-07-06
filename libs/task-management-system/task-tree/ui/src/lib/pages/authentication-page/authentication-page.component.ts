@@ -10,6 +10,7 @@ import { BUTTON_NAME, SCREEN_VIEW, ScreenAction } from '@task-tree-shared';
 import { Router } from '@angular/router';
 import { ForgotPasswordComponent } from "../../features/forgot-password/forgot-password.component";
 import { OneTimePasswordComponent } from "../../features/one-time-password/one-time-password.component";
+import { SelectDeviceComponent } from "../../features/select-device/select-device.component";
 
 @Component({
     selector: 'lib-authentication-page',
@@ -25,11 +26,12 @@ import { OneTimePasswordComponent } from "../../features/one-time-password/one-t
         EditEmailComponent,
         EditPhoneNumberComponent,
         ForgotPasswordComponent,
-        OneTimePasswordComponent
+        OneTimePasswordComponent,
+        SelectDeviceComponent
     ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.SELECT_DEVICE;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {
@@ -42,6 +44,11 @@ export class AuthenticationPageComponent {
   onVerify(screen: ScreenAction) {
     if (screen.buttonName === BUTTON_NAME.SUBMIT) {
       this.router.navigate(['/task']);
+    }
+  }
+  onSetupLater(screen:ScreenAction){
+    if (screen.buttonName === BUTTON_NAME.SET_UP_LATER) {
+      this.router.navigate(['/home']);
     }
   }
 

@@ -10,6 +10,10 @@
       (navigate)="navigateToNextView($event)"
       (back)="backToPreviousView($event)"
     ></lib-add-phone-number>
+    <lib-select-device *ngSwitchCase="'select-device'"
+    (navigate)="navigateToNextView($event)"
+    (back)="onSetupLater($event)"
+    ></lib-select-device>
     <lib-edit-email
       *ngSwitchCase="'edit-email'"
       (back)="backToPreviousView($event)"
