@@ -1,0 +1,30 @@
+.p-card {
+    max-width: 400px; /* Adjust width as needed */
+    padding: 1.5rem;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .select-device__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .select-device__button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0.5em;
+  }
+  .set-up-later-link{
+    margin-top: 1em;
+    color: cornflowerblue;
+  }

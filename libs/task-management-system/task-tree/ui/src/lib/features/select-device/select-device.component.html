@@ -1,0 +1,48 @@
+<p-card styleClass="ui-card-shadow">
+  <ng-template pTemplate="header">
+    <div class="text-center">
+      <h2>Select Device</h2>
+    </div>
+  </ng-template>
+  <div class="select-device__buttons">
+    <button
+      pButton
+      type="button"
+      label="Add Email"
+      class="select-device__button"
+      (click)="selectOption('addEmail')"
+      outlined="true"
+      severity="secondary"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Edit Email"
+      class="select-device__button"
+      (click)="selectOption('editEmail')"
+      outlined="true"
+      severity="secondary"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Add Phone Number"
+      class="select-device__button"
+      (click)="selectOption('addPhone')"
+      outlined="true"
+      severity="secondary"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Edit Phone Number"
+      class="select-device__button"
+      (click)="selectOption('editPhone')"
+      outlined="true"
+      severity="secondary"
+    ></button>
+  </div>
+  <div class="p-field">
+    <a (click)="setUpLater()" class="text-center set-up-later-link"> Set Up Later</a>
+  </div>
+</p-card>
