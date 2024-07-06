@@ -43,9 +43,15 @@ export class AuthenticationPageComponent {
 
   onVerify(screen: ScreenAction) {
     if (screen.buttonName === BUTTON_NAME.SUBMIT) {
-      this.router.navigate(['/task']);
+      if(screen.currentView === SCREEN_VIEW.SIGN_UP){
+        this.router.navigate(['/profile'])
+      }
+      else{
+        this.router.navigate(['/task']);
+      }
     }
   }
+  
   onSetupLater(screen:ScreenAction){
     if (screen.buttonName === BUTTON_NAME.SET_UP_LATER) {
       this.router.navigate(['/home']);
