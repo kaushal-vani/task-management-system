@@ -6,11 +6,14 @@ export * from './lib/features/edit-phone-number/edit-phone-number.component';
 export * from './lib/features/forgot-password/forgot-password.component';
 export * from './lib/features/login/login.component';
 export * from './lib/features/one-time-password/one-time-password.component';
-export * from './lib/features/sign-up/sign-up.component';
 export * from './lib/features/select-device/select-device.component';
+export * from './lib/features/sign-up/sign-up.component';
+export * from './lib/features/verification-completed/verification-completed.component';
+
 /* Pages */
 
 export * from './lib/pages/authentication-page/authentication-page.component';
 export * from './lib/pages/home-page/home-page.component';
 export * from './lib/pages/profile-page/profile-page.component';
 export * from './lib/pages/task-page/task-page.component';
+export * from './lib/pages/page-not-found/page-not-found.component';
