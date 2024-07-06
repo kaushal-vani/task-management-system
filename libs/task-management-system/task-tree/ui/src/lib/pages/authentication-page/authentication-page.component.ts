@@ -27,16 +27,19 @@ import { Router } from '@angular/router';
   styleUrl: './authentication-page.component.scss',
 })
 export class AuthenticationPageComponent {
-  currentView : SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
-  router = inject(Router)
+  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
+  router = inject(Router);
 
+  navigateToNextView(screen: ScreenAction) {
+    this.currentView = screen.nextView || this.currentView;
+  }
+  backToPreviousView(screen: ScreenAction) {
+    this.currentView = screen.previousView || this.currentView;
+  }
 
-onScreenChange(screen: ScreenAction) {
-  this.currentView = screen.nextView || this.currentView;
-}
-onSubmit(screen: ScreenAction){
-if(screen.buttonName === BUTTON_NAME.SUBMIT){
-  this.router.navigate(['/task']);
-}
-}
+  onVerify(screen: ScreenAction) {
+    if (screen.buttonName === BUTTON_NAME.SUBMIT) {
+      this.router.navigate(['/task']);
+    }
+  }
 }

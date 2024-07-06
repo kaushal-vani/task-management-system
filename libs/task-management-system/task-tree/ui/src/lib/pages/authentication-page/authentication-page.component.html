@@ -2,32 +2,34 @@
   <div class="content" [ngSwitch]="currentView">
     <lib-add-email
       *ngSwitchCase="'add-email'"
-      (navigateAction)="onScreenChange($event)"
+      (navigateAction)="navigateToNextView($event)"
     ></lib-add-email>
     <lib-add-phone-number
       *ngSwitchCase="'add-phone-number'"
-      (navigateAction)="onScreenChange($event)"
+      (navigateAction)="navigateToNextView($event)"
     ></lib-add-phone-number>
     <lib-edit-email
       *ngSwitchCase="'edit-email'"
-      (navigateAction)="onScreenChange($event)"
+      (navigateAction)="navigateToNextView($event)"
     ></lib-edit-email>
     <lib-edit-phone-number
       *ngSwitchCase="'edit-phone-number'"
-      (navigateAction)="onScreenChange($event)"
+      (navigateAction)="navigateToNextView($event)"
     ></lib-edit-phone-number>
     <lib-login
       *ngSwitchCase="'login'"
-      (navigateAction)="onScreenChange($event)"
+      (navigate)="navigateToNextView($event)"
+      (verify)="onVerify($event)"
+      (back)="backToPreviousView($event)"
     ></lib-login>
     <lib-one-time-password
       *ngSwitchCase="'one-time-password'"
-      (navigateAction)="onScreenChange($event)"
+      (navigateAction)="navigateToNextView($event)"
     ></lib-one-time-password>
     <lib-sign-up
       *ngSwitchCase="'sign-up'"
-      (navigateAction)="onScreenChange($event)"
-      (submitAction)="onSubmit($event)"
+      (navigateAction)="navigateToNextView($event)"
+      (submitAction)="onVerify($event)"
     ></lib-sign-up>
   </div>
 </div>
