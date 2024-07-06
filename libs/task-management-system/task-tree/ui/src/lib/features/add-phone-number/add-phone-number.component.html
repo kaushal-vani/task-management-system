@@ -1,3 +1,51 @@
-<p>add-phone-number works!</p>
+<p-card styleClass="ui-card-shadow">
+    <ng-template pTemplate="header">
+        <div class="text-center">
+            <h2>Add Phone Number</h2>
+        </div>
+    </ng-template>
+    <form [formGroup]="phoneForm" (ngSubmit)="savePhoneNumber()">
+        <div class="add-phone__field">
+            <label class="add-phone__label" for="phone">Phone Number</label>
+            <input
+                id="phone"
+                type="text"
+                pInputText
+                formControlName="phoneNumber"
+                class="add-phone__input"
+                aria-describedby="phoneHelp"
+            />
+            <div
+                id="phoneHelp"
+                class="add-phone__error"
+                *ngIf="phone?.invalid && phone?.touched"
+            >
+                <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+                <div *ngIf="phone?.errors?.['pattern']">
+                    Please enter a valid phone number.
+                </div>
+            </div>
+        </div>
 
-<button (click)="changeView()">add phone number</button>
+        <div class="add-phone__buttons">
+            <button
+                pButton
+                type="submit"
+                label="Save"
+                [disabled]="phoneForm.invalid"
+                class="add-phone__button"
+            ></button>
+            <button
+                pButton
+                type="button"
+                label="Cancel"
+                (click)="cancelAddPhone()"
+                class="add-phone__button"
+            ></button>
+        </div>
+
+        <div *ngIf="successMessage" class="add-phone__success">
+            {{ successMessage }}
+        </div>
+    </form>
+</p-card>
