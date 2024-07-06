@@ -16,7 +16,7 @@ export class LoginComponent {
     this.navigate.emit({
       currentView: SCREEN_VIEW.LOGIN,
       buttonName: BUTTON_NAME.VERIFY,
-      nextView: SCREEN_VIEW.ADD_PHONE_NUMBER,
+      nextView: SCREEN_VIEW.ONE_TIME_PASSWORD,
       previousView: SCREEN_VIEW.SIGN_UP
     });
   }
