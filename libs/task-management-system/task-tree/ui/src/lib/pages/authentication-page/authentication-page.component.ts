@@ -44,4 +44,10 @@ export class AuthenticationPageComponent {
       this.router.navigate(['/task']);
     }
   }
+
+  resendCode(screen: ScreenAction){
+    if(screen.buttonName === BUTTON_NAME.RESEND){
+      console.log('Resend Code works')
+    }
+  }
 }

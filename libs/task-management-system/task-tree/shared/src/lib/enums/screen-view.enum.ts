@@ -1,6 +1,7 @@
 export const enum SCREEN_VIEW {
   ADD_EMAIL = 'add-email',
   ADD_PHONE_NUMBER = 'add-phone-number',
+  CHANGE_DEVICE = 'change-device',
   EDIT_EMAIL = 'edit-email',
   EDIT_PHONE_NUMBER = 'edit-phone-number',
   FORGOT_PASSWORD = 'forgot-password',

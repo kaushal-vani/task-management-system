@@ -28,6 +28,9 @@
     ></lib-login>
     <lib-one-time-password
       *ngSwitchCase="'one-time-password'"
+      (navigate)="navigateToNextView($event)"
+      (verify)="onVerify($event)"
+      (resend)="resendCode($event)"
     ></lib-one-time-password>
     <lib-sign-up
       *ngSwitchCase="'sign-up'"
