@@ -1,2 +1,107 @@
-<p>sign-up works!</p>
-<button (click)="changeView()">Login Submit</button>
+<p-card styleClass="ui-card-shadow">
+  <ng-template pTemplate="header">
+    <div class="text-center">
+      <h2>Sign Up</h2>
+    </div>
+  </ng-template>
+  <form
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+    class="sign-up-form p-fluid"
+  >
+    <div class="p-field">
+      <label for="username" class="sign-up-form__label">Username</label>
+      <input
+        id="username"
+        type="text"
+        pInputText
+        formControlName="username"
+        class="sign-up-form__input"
+      />
+      <div
+        *ngIf="
+          signUpForm.get('username')?.invalid &&
+          signUpForm.get('username')?.touched
+        "
+        class="sign-up-form__error"
+      >
+        Username is required.
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="email" class="sign-up-form__label">Email</label>
+      <input
+        id="email"
+        type="email"
+        pInputText
+        formControlName="email"
+        class="sign-up-form__input"
+      />
+      <div
+        *ngIf="
+          signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched
+        "
+        class="sign-up-form__error"
+      >
+        Valid email is required.
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="password" class="sign-up-form__label">Password</label>
+      <input
+        id="password"
+        type="password"
+        pPassword
+        formControlName="password"
+        class="sign-up-form__input"
+      />
+      <div
+        *ngIf="
+          signUpForm.get('password')?.invalid &&
+          signUpForm.get('password')?.touched
+        "
+        class="sign-up-form__error"
+      >
+        Password is required.
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="confirmPassword" class="sign-up-form__label"
+        >Confirm Password</label
+      >
+      <input
+        id="confirmPassword"
+        type="password"
+        pPassword
+        formControlName="confirmPassword"
+        class="sign-up-form__input"
+      />
+      <div
+        *ngIf="
+          signUpForm.get('confirmPassword')?.invalid &&
+          signUpForm.get('confirmPassword')?.touched
+        "
+        class="sign-up-form__error"
+      >
+        Passwords must match.
+      </div>
+    </div>
+    <div class="p-field">
+      <p-button
+        icon="pi pi-user"
+        [loading]="loading"
+        type="submit"
+        label="Sign Up"
+        [disabled]="signUpForm.invalid"
+        class="sign-up-form__button"
+      ></p-button>
+    </div>
+  </form>
+  <div class="p-field">
+    <span class="text-center">
+      <a class="text-center" (click)="changeView()" class="sign-up-form__link">
+        Login</a
+      ></span
+    >
+  </div>
+</p-card>
