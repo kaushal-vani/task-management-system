@@ -23,7 +23,10 @@
           }
         ],
         "styles": [
-          "apps/task-management-system/task-tree/main/src/styles.scss"
+          "apps/task-management-system/task-tree/main/src/styles.scss",
+          "node_modules/primeng/resources/themes/saga-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeicons/primeicons.css"
         ],
         "scripts": []
       },
