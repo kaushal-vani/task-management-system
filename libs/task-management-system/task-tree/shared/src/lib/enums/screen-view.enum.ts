@@ -6,6 +6,7 @@ export const enum SCREEN_VIEW {
   LOGIN = 'login',
   ONE_TIME_PASSWORD = 'one-time-password',
   SIGN_UP = 'sign-up',
+  VERIFICATION_COMPLETED = 'verification-completed'
 }
 
 export const enum BUTTON_NAME {
@@ -13,4 +14,5 @@ export const enum BUTTON_NAME {
   CANCEL = 'cancel',
   CONTINUE = 'continue',
   VERIFY = 'verify',
+  OTP_SUBMIT = 'otp-submit'
 }
