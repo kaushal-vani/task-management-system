@@ -1,7 +1,7 @@
 export const enum SCREEN_VIEW {
   ADD_EMAIL = 'add-email',
   ADD_PHONE_NUMBER = 'add-phone-number',
-  CHANGE_DEVICE = 'change-device',
+  SELECT_DEVICE = 'select-device',
   EDIT_EMAIL = 'edit-email',
   EDIT_PHONE_NUMBER = 'edit-phone-number',
   FORGOT_PASSWORD = 'forgot-password',
@@ -29,4 +29,5 @@ export const enum BUTTON_NAME {
   SIGN_UP = 'sign-up',
   SUBMIT = 'submit',
   VERIFY = 'verify',
+  SET_UP_LATER = 'set-up-later'
 }
