@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../../features/login/login.component';
 import { SignUpComponent } from '../../features/sign-up/sign-up.component';
@@ -7,6 +7,8 @@ import { AddEmailComponent } from '../../features/add-email/add-email.component'
 import { EditEmailComponent } from '../../features/edit-email/edit-email.component';
 import { EditPhoneNumberComponent } from '../../features/edit-phone-number/edit-phone-number.component';
 import { OneTimePasswordComponent } from '../../features/one-time-password/one-time-password.component';
+import { BUTTON_NAME, SCREEN_VIEW, ScreenAction } from '@task-tree-shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lib-authentication-page',
@@ -25,5 +27,16 @@ import { OneTimePasswordComponent } from '../../features/one-time-password/one-t
   styleUrl: './authentication-page.component.scss',
 })
 export class AuthenticationPageComponent {
-  currentView = '';
+  currentView : SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
+  router = inject(Router)
+
+
+onScreenChange(screen: ScreenAction) {
+  this.currentView = screen.nextView || this.currentView;
+}
+onSubmit(screen: ScreenAction){
+if(screen.buttonName === BUTTON_NAME.SUBMIT){
+  this.router.navigate(['/task']);
+}
+}
 }

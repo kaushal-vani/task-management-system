@@ -10,10 +10,10 @@ import { ScreenAction, SCREEN_VIEW, BUTTON_NAME } from '@task-tree-shared';
   styleUrl: './edit-phone-number.component.scss',
 })
 export class EditPhoneNumberComponent {
-  @Output() navigate = new EventEmitter<ScreenAction>();
+  @Output() navigateAction = new EventEmitter<ScreenAction>();
 
   changeView() {
-    this.navigate.emit({
+    this.navigateAction.emit({
       currentView: SCREEN_VIEW.EDIT_PHONE_NUMBER,
       buttonName: BUTTON_NAME.SUBMIT,
       nextView: SCREEN_VIEW.EDIT_EMAIL,

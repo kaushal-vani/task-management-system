@@ -10,10 +10,10 @@ import { BUTTON_NAME, SCREEN_VIEW, ScreenAction } from '@task-tree-shared';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  @Output() navigate = new EventEmitter<ScreenAction>();
+  @Output() navigateAction = new EventEmitter<ScreenAction>();
 
   changeView() {
-    this.navigate.emit({
+    this.navigateAction.emit({
       currentView: SCREEN_VIEW.LOGIN,
       buttonName: BUTTON_NAME.VERIFY,
       nextView: SCREEN_VIEW.ONE_TIME_PASSWORD,

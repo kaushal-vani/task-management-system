@@ -10,10 +10,10 @@ import { ScreenAction, SCREEN_VIEW, BUTTON_NAME } from '@task-tree-shared';
   styleUrl: './add-email.component.scss',
 })
 export class AddEmailComponent {
-  @Output() navigate = new EventEmitter<ScreenAction>();
+  @Output() navigateAction = new EventEmitter<ScreenAction>();
 
   changeView() {
-    this.navigate.emit({
+    this.navigateAction.emit({
       currentView: SCREEN_VIEW.ADD_EMAIL,
       buttonName: BUTTON_NAME.SUBMIT,
       nextView: SCREEN_VIEW.VERIFICATION_COMPLETED,
