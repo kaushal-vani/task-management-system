@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScreenAction, SCREEN_VIEW, BUTTON_NAME } from '@task-tree-shared';
 
 @Component({
   selector: 'lib-edit-email',
@@ -8,4 +9,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './edit-email.component.html',
   styleUrl: './edit-email.component.scss',
 })
-export class EditEmailComponent {}
+export class EditEmailComponent {
+  @Output() navigate = new EventEmitter<ScreenAction>();
+
+  changeView() {
+    this.navigate.emit({
+      currentView: SCREEN_VIEW.EDIT_EMAIL,
+      buttonName: BUTTON_NAME.SUBMIT,
+      nextView: SCREEN_VIEW.ADD_EMAIL,
+    });
+  }
+}
