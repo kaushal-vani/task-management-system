@@ -1,0 +1,18 @@
+nav {
+    background-color: #f8f9fa;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  @media (max-width: 600px) {
+    .logo {
+      height: 30px;
+    }
+    
+    .p-button {
+      font-size: 12px;
+      padding: 0.5rem 1rem;
+    }
+  }

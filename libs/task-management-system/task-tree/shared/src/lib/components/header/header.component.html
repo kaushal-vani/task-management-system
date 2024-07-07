@@ -1,0 +1,164 @@
+<div
+  class="surface-overlay shadow-2 flex relative lg:static justify-content-between"
+  style="min-height: 42px"
+>
+  <!-- Logo or home link -->
+  <a
+    pripple=""
+    pstyleclass="@next"
+    enterclass="hidden"
+    leavetoclass="hidden"
+    class="p-ripple p-element cursor-pointer inline-flex align-items-center px-3 lg:hidden text-700"
+    (click)="toggleMenu()"
+    ><i class="pi pi-bars text-2xl"></i
+    ><span
+      class="p-ink"
+      style="height: 56px; width: 56px; top: -3px; left: -8px"
+    ></span
+  ></a>
+
+  <!-- Main navigation -->
+  <div
+    class="lg:flex absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none"
+    [ngClass]="{'hidden': !menuVisible, 'flex': menuVisible}"
+  >
+    <ul class="flex list-none p-0 m-0 flex-column lg:flex-row">
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 lg:border-left-none lg:border-bottom-2 border-blue-500 transition-colors transition-duration-150 py-3 lg:py-0 px-3"
+          ><span class="pi pi-home mr-2"></span
+          ><span class="font-medium">Home</span><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150 py-3 lg:py-0 px-3"
+          ><span class="pi pi-users mr-2"></span
+          ><span class="font-medium">Customers</span><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150 py-3 lg:py-0 px-3"
+          ><span class="pi pi-calendar mr-2"></span
+          ><span class="font-medium">Calendar</span><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150 py-3 lg:py-0 px-3"
+          ><span class="pi pi-home mr-2"></span
+          ><span class="font-medium">Stats</span><span class="p-ink"></span
+        ></a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- More options -->
+  <a
+    pripple=""
+    pstyleclass="@next"
+    enterclass="hidden"
+    leavetoclass="hidden"
+    class="p-ripple p-element cursor-pointer inline-flex align-items-center px-3 lg:hidden text-700"
+    (click)="toggleUserMenu()"
+    ><i class="pi pi-ellipsis-v text-xl"></i
+    ><span
+      class="p-ink"
+      style="height: 52px; width: 52px; top: -6px; left: -1px"
+    ></span
+  ></a>
+
+  <!-- User menu -->
+  <div
+    class="lg:flex lg:justify-content-end absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none"
+    [ngClass]="{'hidden': !userMenuVisible, 'flex': userMenuVisible}"
+  >
+    <ul class="flex list-none p-0 m-0 flex-column lg:flex-row">
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 py-3 lg:py-0 px-3 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150"
+          ><span class="pi pi-book mr-2 lg:mr-0"></span
+          ><span class="font-medium inline lg:hidden">Documentation</span
+          ><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 py-3 lg:py-0 px-3 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150"
+          ><span class="pi pi-inbox mr-2 lg:mr-0"></span
+          ><span class="font-medium inline lg:hidden">Inbox</span
+          ><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full">
+        <a
+          pripple=""
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 py-3 lg:py-0 px-3 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150"
+          ><span class="pi pi-bell mr-2 lg:mr-0"></span
+          ><span class="font-medium inline lg:hidden">Notifications</span
+          ><span class="p-ink"></span
+        ></a>
+      </li>
+      <li class="h-full relative">
+        <a
+          pripple=""
+          pstyleclass="@next"
+          enterclass="hidden"
+          enteractiveclass="scalein"
+          leavetoclass="hidden"
+          leaveactiveclass="fadeout"
+          class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 py-3 lg:py-0 px-3 border-left-2 lg:border-left-none lg:border-bottom-2 border-transparent hover:border-500 transition-colors transition-duration-150"
+          (click)="toggleProfileMenu()"
+          ><img
+            src="assets/images/blocks/avatars/circle/avatar-f-1.png"
+            class="lg:mr-0"
+            style="width: 28px; height: 28px" /><span
+            class="mx-2 font-medium text-900"
+            >Jane Sanders</span
+          ><i class="pi pi-angle-down"></i><span class="p-ink"></span
+        ></a>
+        <div
+          class="hidden static lg:absolute w-full surface-overlay left-0 top-100 z-1 shadow-none lg:shadow-2 origin-top border-round pl-3 lg:pl-0"
+          [ngClass]="{'hidden': !profileMenuVisible, 'block': profileMenuVisible}"
+        >
+          <ul class="list-none p-0 m-0">
+            <li>
+              <a
+                pripple=""
+                class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 border-transparent hover:border-500 transition-colors transition-duration-150 p-3"
+                ><span class="pi pi-user mr-2"></span
+                ><span class="font-medium">Profile</span
+                ><span class="p-ink"></span
+              ></a>
+            </li>
+            <li>
+              <a
+                pripple=""
+                class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 border-transparent hover:border-500 transition-colors transition-duration-150 p-3"
+                ><span class="pi pi-cog mr-2"></span
+                ><span class="font-medium">Settings</span
+                ><span class="p-ink"></span
+              ></a>
+            </li>
+            <li>
+              <a
+                pripple=""
+                class="p-ripple p-element cursor-pointer h-full inline-flex align-items-center text-600 border-left-2 border-transparent hover:border-500 transition-colors transition-duration-150 p-3"
+                ><span class="pi pi-sign-out mr-2"></span
+                ><span class="font-medium">Sign Out</span
+                ><span class="p-ink"></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
