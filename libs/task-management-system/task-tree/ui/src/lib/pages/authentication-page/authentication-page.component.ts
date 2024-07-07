@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { ForgotPasswordComponent } from "../../features/forgot-password/forgot-password.component";
 import { OneTimePasswordComponent } from "../../features/one-time-password/one-time-password.component";
 import { SelectDeviceComponent } from "../../features/select-device/select-device.component";
+import { VerificationCompletedComponent } from "../../features/verification-completed/verification-completed.component";
 
 @Component({
     selector: 'lib-authentication-page',
@@ -27,11 +28,12 @@ import { SelectDeviceComponent } from "../../features/select-device/select-devic
         EditPhoneNumberComponent,
         ForgotPasswordComponent,
         OneTimePasswordComponent,
-        SelectDeviceComponent
+        SelectDeviceComponent,
+        VerificationCompletedComponent
     ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.VERIFICATION_COMPLETED;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {
@@ -51,7 +53,7 @@ export class AuthenticationPageComponent {
       }
     }
   }
-  
+
   onSetupLater(screen:ScreenAction){
     if (screen.buttonName === BUTTON_NAME.SET_UP_LATER) {
       this.router.navigate(['/home']);

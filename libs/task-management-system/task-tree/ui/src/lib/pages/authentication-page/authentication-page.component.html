@@ -45,5 +45,8 @@
       (navigate)="navigateToNextView($event)"
       (verify)="onVerify($event)"
     ></lib-sign-up>
+    <lib-verification-completed
+    *ngSwitchCase="'verification-completed'"
+    ></lib-verification-completed>
   </div>
 </div>
