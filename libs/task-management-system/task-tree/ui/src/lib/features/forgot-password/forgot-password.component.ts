@@ -49,6 +49,7 @@ export class ForgotPasswordComponent implements OnInit {
         this.verify.emit({
           currentView: SCREEN_VIEW.FORGOT_PASSWORD,
           buttonName: BUTTON_NAME.SUBMIT,
+          nextView: SCREEN_VIEW.VERIFICATION_COMPLETED
         });
         // Mock logic for password recovery (send email, etc.)
         console.log('Submitting forgot password form:', this.forgotPasswordForm.value);
