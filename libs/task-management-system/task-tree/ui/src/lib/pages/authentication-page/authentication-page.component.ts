@@ -33,7 +33,7 @@ import { VerificationCompletedComponent } from "../../features/verification-comp
     ]
 })
 export class AuthenticationPageComponent {
-  currentView: SCREEN_VIEW = SCREEN_VIEW.VERIFICATION_COMPLETED;
+  currentView: SCREEN_VIEW = SCREEN_VIEW.SIGN_UP;
   router = inject(Router);
 
   navigateToNextView(screen: ScreenAction) {
@@ -47,6 +47,9 @@ export class AuthenticationPageComponent {
     if (screen.buttonName === BUTTON_NAME.SUBMIT) {
       if(screen.currentView === SCREEN_VIEW.SIGN_UP){
         this.router.navigate(['/profile'])
+      }
+      else if (screen.nextView === SCREEN_VIEW.VERIFICATION_COMPLETED){
+        this.currentView = screen.nextView || this.currentView;
       }
       else{
         this.router.navigate(['/task']);
