@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-
 
 @Component({
   selector: 'lib-header',
@@ -15,15 +14,31 @@ export class HeaderComponent {
   userMenuVisible = false;
   profileMenuVisible = false;
 
-  toggleMenu(): void {
+  @ViewChild('profileMenu')
+  profileMenu!: ElementRef;
+  @ViewChild('profileMenuContent')
+  profileMenuContent!: ElementRef;
+
+  toggleMenu() {
     this.menuVisible = !this.menuVisible;
   }
 
-  toggleUserMenu(): void {
+  toggleUserMenu() {
     this.userMenuVisible = !this.userMenuVisible;
   }
 
-  toggleProfileMenu(): void {
+  toggleProfileMenu() {
     this.profileMenuVisible = !this.profileMenuVisible;
+  }
+
+  closeProfileMenu() {
+    this.profileMenuVisible = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.profileMenu.nativeElement.contains(event.target) && !this.profileMenuContent.nativeElement.contains(event.target)) {
+      this.profileMenuVisible = false;
+    }
   }
 }
