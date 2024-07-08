@@ -16,5 +16,3 @@ export * from './lib/pages/authentication-page/authentication-page.component';
 export * from './lib/pages/home-page/home-page.component';
 export * from './lib/pages/profile-page/profile-page.component';
 export * from './lib/pages/task-page/task-page.component';
-export * from './lib/pages/page-not-found/page-not-found.component';
-export * from './lib/pages/stat-page/stat-page.component';
